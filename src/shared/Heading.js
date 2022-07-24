@@ -7,7 +7,7 @@ const Heading = ({ children }) => {
         <div class="drawer drawer-end">
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col">
-                <div class="w-full navbar bg-transparent lg:px-20">
+                <div class="w-full navbar bg-transparent px-2 lg:px-20">
                     <div class="flex-1 px-2 mx-2">
                         <img width={100} src={logo} alt="" />
                     </div>
