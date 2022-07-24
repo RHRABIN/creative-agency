@@ -1,0 +1,32 @@
+[
+    {
+        "_id": "1",
+        "title": "Web & Mobile design",
+        "img": "https://i.ibb.co/nm2zZJZ/service1.png",
+        "text": "We craft stunning and amazing web UI, using a well drrafted UX to fit your product."
+    },
+    {
+        "_id": "2",
+        "title": "Graphic design",
+        "img": "https://i.ibb.co/qdc2WGr/service3.png",
+        "text": "Amazing flyers, social media posts and brand representations that would make your brand stand out."
+    },
+    {
+        "_id": "3",
+        "title": "Web development",
+        "img": "https://i.ibb.co/xs3KDcm/service2.png",
+        "text": "With well written codes, we build amazing apps for all platforms, mobile and web apps in general."
+    },
+    {
+        "_id": "4",
+        "title": "Web development",
+        "img": "https://i.ibb.co/5kD0bF8/service4.png",
+        "text": "With well written codes, we build amazing apps for all platforms, mobile and web apps in general."
+    },
+    {
+        "_id": "5",
+        "title": "Web development",
+        "img": "https://i.ibb.co/tC22nnz/service5.png",
+        "text": "With well written codes, we build amazing apps for all platforms, mobile and web apps in general."
+    }
+]

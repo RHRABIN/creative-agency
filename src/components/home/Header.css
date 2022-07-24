@@ -1,5 +1,5 @@
 .header-container::after {
-    height: 540px;
+    height: 550px;
     content: ' ';
     position: absolute;
     top: 0;

@@ -8,7 +8,7 @@ import Portfolio from './components/Portfolio';
 
 function App() {
   return (
-    <div>
+    <div className='mb-10'>
       <Heading>
         <Routes>
           <Route path='/' element={<Home />}></Route>

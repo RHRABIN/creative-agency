@@ -21,10 +21,8 @@ const LogoSlider = () => {
         <>
             <Swiper
                 slidesPerView={10}
-                spaceBetween={1}
-                pagination={{
-                    clickable: true,
-                }}
+                spaceBetween={5}
+
                 autoplay={{
                     delay: 2500,
                     disableOnInteraction: false,
