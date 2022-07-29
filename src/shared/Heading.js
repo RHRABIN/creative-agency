@@ -22,7 +22,8 @@ const Heading = ({ children }) => {
                             <li><NavLink to="/" className="rounded-lg">Home</NavLink></li>
                             <li><NavLink to="/portfolio" className="rounded-lg">Our Portfolio</NavLink></li>
                             <li><NavLink to="/about" className="rounded-lg">Our Team</NavLink></li>
-                            <li><NavLink to="contact" className="rounded-lg">Contact Us</NavLink></li>
+                            <li><NavLink to="/contact" className="rounded-lg">Contact Us</NavLink></li>
+                            <li><NavLink to="/login" className="rounded-lg">Login</NavLink></li>
 
 
                         </ul>
@@ -37,6 +38,7 @@ const Heading = ({ children }) => {
                     <li><NavLink to="/portfolio" className="rounded-lg">Our Portfolio</NavLink></li>
                     <li><NavLink to="/about" className="rounded-lg">Our Team</NavLink></li>
                     <li><NavLink to="contact" className="rounded-lg">Contact Us</NavLink></li>
+                    <li><NavLink to="/login" className="rounded-lg">Login</NavLink></li>
 
                 </ul>
 
