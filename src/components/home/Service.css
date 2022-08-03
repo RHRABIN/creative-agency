@@ -1,0 +1,31 @@
+.photo-button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    padding-left: 30%;
+    bottom: 0;
+    left: 0;
+    transform: translateY(400px);
+    transition: .3s ease-out;
+}
+
+.photo:hover .photo-button {
+    transform: translateY(140px);
+}
+
+.photo::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    top: 0;
+    left: 0;
+    transition: .3s linear;
+}
+
+.photo:hover::before {
+    opacity: 1;
+}

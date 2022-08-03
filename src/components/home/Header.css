@@ -10,3 +10,9 @@
     /* background-color: #FBD062; */
     z-index: -50;
 }
+
+@media screen and (max-width:580px) {
+    .header-container::after {
+        height: 100%;
+    }
+}

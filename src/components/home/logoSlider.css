@@ -28,3 +28,9 @@
     display: block;
     object-fit: cover;
 }
+
+@media screen and (max-width:540px) {
+    .swiper {
+        width: 100%;
+    }
+}

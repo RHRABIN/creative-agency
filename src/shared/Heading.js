@@ -1,8 +1,14 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink } from 'react-router-dom';
 import logo from '../assests/images/logos/logo.png'
+import auth from '../init.firebase';
 const Heading = ({ children }) => {
-
+    const [user] = useAuthState(auth);
+    const handleLogout = () => {
+        signOut(auth)
+    }
     return (
         <div class="drawer drawer-end ">
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
@@ -23,7 +29,8 @@ const Heading = ({ children }) => {
                             <li><NavLink to="/portfolio" className="rounded-lg">Our Portfolio</NavLink></li>
                             <li><NavLink to="/about" className="rounded-lg">Our Team</NavLink></li>
                             <li><NavLink to="/contact" className="rounded-lg">Contact Us</NavLink></li>
-                            <li><NavLink to="/login" className="rounded-lg">Login</NavLink></li>
+                            <li><NavLink to='/dashboard' className="rounded-lg">Dashboard</NavLink> </li>
+                            <li>{user ? <button onClick={handleLogout} className="rounded-lg">Logout</button> : <NavLink to="/login" className="rounded-lg">Login</NavLink>}</li>
 
 
                         </ul>
@@ -38,7 +45,7 @@ const Heading = ({ children }) => {
                     <li><NavLink to="/portfolio" className="rounded-lg">Our Portfolio</NavLink></li>
                     <li><NavLink to="/about" className="rounded-lg">Our Team</NavLink></li>
                     <li><NavLink to="contact" className="rounded-lg">Contact Us</NavLink></li>
-                    <li><NavLink to="/login" className="rounded-lg">Login</NavLink></li>
+                    <li>{user ? <button onClick={handleLogout} className="rounded-lg">Logout</button> : <NavLink to="/login" className="rounded-lg">Login</NavLink>}</li>
 
                 </ul>
 

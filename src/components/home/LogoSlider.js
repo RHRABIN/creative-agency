@@ -29,8 +29,8 @@ const LogoSlider = () => {
                 }}
                 breakpoints={{
                     "@0.00": {
-                        slidesPerView: 1,
-                        spaceBetween: 10,
+                        slidesPerView: 2,
+                        spaceBetween: 0,
                     },
                     "@0.75": {
                         slidesPerView: 2,

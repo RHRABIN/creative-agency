@@ -1,6 +1,6 @@
 import React from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../assests/images/logos/logo.png'
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import auth from '../init.firebase'
@@ -10,7 +10,9 @@ const Login = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     let setError;
     let setLoading;
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || '/';
     if (error) {
         setError = <p className='text-red-400 text-center mt-2'>{error?.message}</p>
     }
@@ -18,7 +20,7 @@ const Login = () => {
         return <Loading></Loading>
     }
     if (user) {
-        navigate('/')
+        navigate(from, { replace: true });
     }
     const handleGoogle = () => {
         setError = ""

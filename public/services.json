@@ -7,25 +7,35 @@
     },
     {
         "_id": "2",
+        "price": "3500",
         "title": "Graphic design",
         "img": "https://i.ibb.co/qdc2WGr/service3.png",
         "text": "Amazing flyers, social media posts and brand representations that would make your brand stand out."
     },
     {
         "_id": "3",
+        "price": "5000",
         "title": "Web development",
         "img": "https://i.ibb.co/xs3KDcm/service2.png",
         "text": "With well written codes, we build amazing apps for all platforms, mobile and web apps in general."
     },
     {
+        "_id": "3",
+        "price": "2000",
+        "title": "Full Stack Web development",
+        "img": "https://i.ibb.co/xs3KDcm/service2.png",
+        "text": "With well written codes, we build amazing apps for all platforms, mobile and web apps in general."
+    },
+    {
         "_id": "4",
-        "title": "Web development",
+        "price": "4500",
+        "title": "Ios Development",
         "img": "https://i.ibb.co/5kD0bF8/service4.png",
         "text": "With well written codes, we build amazing apps for all platforms, mobile and web apps in general."
     },
     {
-        "_id": "5",
-        "title": "Web development",
+        "price": "5500",
+        "title": "Android development",
         "img": "https://i.ibb.co/tC22nnz/service5.png",
         "text": "With well written codes, we build amazing apps for all platforms, mobile and web apps in general."
     }
