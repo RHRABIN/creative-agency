@@ -14,11 +14,12 @@ const UserReview = () => {
         e.preventDefault();
         const review = {
             name: nameRef.current.value,
-            companyName: companyNameRef.current.value,
-            description: descriptionRef.current.value,
+            designation: companyNameRef.current.value,
+            comment: descriptionRef.current.value,
             userEmail: user.email,
+            img: user.photoURL,
         }
-        const { data } = await axios.post('http://localhost:5000/review', review);
+        const { data } = await axios.post('https://protected-depths-40320.herokuapp.com/review', review);
         formRef.current.reset()
         if (!data.success) {
             return alert(data.message)

@@ -6,6 +6,7 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import auth from '../init.firebase'
 import Loading from '../shared/Loading';
 import { useNavigate } from 'react-router-dom'
+import useToken from './hooks/useToken'
 const Login = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     let setError;
@@ -16,15 +17,17 @@ const Login = () => {
     if (error) {
         setError = <p className='text-red-400 text-center mt-2'>{error?.message}</p>
     }
+    const [token] = useToken(user)
+
     if (loading) {
         return <Loading></Loading>
     }
-    if (user) {
+    if (token) {
         navigate(from, { replace: true });
     }
-    const handleGoogle = () => {
+    const handleGoogle = async () => {
         setError = ""
-        signInWithGoogle()
+        await signInWithGoogle();
     }
     return (
         <div className=' flex justify-center items-center h-full '>

@@ -1,10 +1,12 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import logo from '../assests/images/logos/logo.png'
 import auth from '../init.firebase';
+import { AiOutlineMenu } from 'react-icons/ai'
 const Heading = ({ children }) => {
+    const location = useLocation()
     const [user] = useAuthState(auth);
     const handleLogout = () => {
         signOut(auth)
@@ -14,8 +16,9 @@ const Heading = ({ children }) => {
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col relative">
                 <div class="w-full navbar bg-transparent px-2 lg:px-20">
+                    {location.pathname.includes("dashboard") ? <label for="my-drawer-2" class=" mr-4 drawer-button lg:hidden"><AiOutlineMenu /></label> : ''}
                     <div class="flex-1">
-                        <img width={100} src={logo} alt="" />
+                        <Link to='/'><img width={100} src={logo} alt="" /></Link>
                     </div>
                     <div class="flex-none lg:hidden">
                         <label for="my-drawer-3" class="btn btn-square btn-ghost">
@@ -29,7 +32,12 @@ const Heading = ({ children }) => {
                             <li><NavLink to="/portfolio" className="rounded-lg">Our Portfolio</NavLink></li>
                             <li><NavLink to="/about" className="rounded-lg">Our Team</NavLink></li>
                             <li><NavLink to="/contact" className="rounded-lg">Contact Us</NavLink></li>
-                            <li><NavLink to='/dashboard' className="rounded-lg">Dashboard</NavLink> </li>
+                            <li>{user ? <div class="avatar online">
+                                <div class="w-8 rounded-full">
+                                    <img src={user?.photoURL} />
+                                </div>
+                            </div> : ''}</li>
+
                             <li>{user ? <button onClick={handleLogout} className="rounded-lg">Logout</button> : <NavLink to="/login" className="rounded-lg">Login</NavLink>}</li>
 
 

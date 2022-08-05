@@ -15,10 +15,9 @@ const Order = () => {
     const formRef = useRef()
     const [service, setService] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/service/${id}`).then(res => res.json())
+        fetch(`https://protected-depths-40320.herokuapp.com/service/${id}`).then(res => res.json())
             .then(data => setService(data))
     }, [])
-    console.log(service)
     const handleSubmit = async (e) => {
         e.preventDefault();
         const order = {
@@ -32,7 +31,7 @@ const Order = () => {
             projectDetail: service.text,
 
         }
-        const { data } = await axios.post('http://localhost:5000/order', order)
+        const { data } = await axios.post('https://protected-depths-40320.herokuapp.com/order', order)
         formRef.current.reset()
         if (!data.success) {
             return alert(data.message)
@@ -41,6 +40,7 @@ const Order = () => {
     }
     return (
         <div className='mx-2 lg:mx-10 mt-10 '>
+            <h1 className='font-bold text-xl ml-4 my-2'>Order For <span className='text-secondary'>{service.title}</span></h1>
             <form onSubmit={handleSubmit} ref={formRef}>
                 <input type="text" ref={nameRef} placeholder="Your Name/Company name" className="input w-full max-w-xs lg:max-w-sm mb-4" /> <br />
                 <input type="email" value={user?.email} ref={emailRef} placeholder="Your email address" required className="input w-full max-w-xs lg:max-w-sm mb-4" /> <br />
